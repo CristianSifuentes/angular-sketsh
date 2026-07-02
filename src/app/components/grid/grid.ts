@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
-  imports: [],
+  imports: [NgFor],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
