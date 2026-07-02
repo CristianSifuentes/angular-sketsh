@@ -1,9 +1,9 @@
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgFor, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
-  imports: [NgFor],
+  imports: [NgFor, JsonPipe],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
@@ -17,7 +17,11 @@ export class Grid {
     'Flex Box', 
     'Change Detection'];
 
-    public name = 'Cristian';
+    public person = {
+      name: 'Nico',
+      lastName: 'Stan',
+      age: 20
+    };
 
 
 }
