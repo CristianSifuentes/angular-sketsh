@@ -1,10 +1,23 @@
+import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-grid',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
-export class Grid {}
+export class Grid {
+
+  public concepts = [
+    'Signals', 
+    'Control Flow', 
+    'Standalone', 
+    'CSS Grid', 
+    'Flex Box', 
+    'Change Detection'];
+
+    public name = 'Cristian';
+
+
+}
