@@ -1,9 +1,9 @@
-import { CommonModule, NgFor, JsonPipe } from '@angular/common';
+import { CommonModule, NgFor, JsonPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
-  imports: [NgFor, JsonPipe],
+  imports: [NgFor, JsonPipe, NgIf],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })

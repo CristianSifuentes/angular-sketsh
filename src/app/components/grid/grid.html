@@ -1,9 +1,13 @@
 
-<h2>{{person | json }}</h2>
+<h2>{{  person | json }}</h2>
 
 <p>grid works!</p>
 <section>
     <ul *ngFor="let item of concepts">
-        <li>{{item}}</li>
+        <li *ngIf="item.trim().toLowerCase() === 'Signals'; else itemDefault">Fix</li>
+         <ng-template #itemDefault>
+            <li>{{item}}</li>
+         </ng-template>
     </ul>
 </section>
+ 
