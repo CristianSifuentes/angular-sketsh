@@ -28,11 +28,11 @@
     </li>
   </ul>
 
-  <div [ngSwitch]="concepts[0]">
+  <ng-container [ngSwitch]="concepts[0]">
    <div *ngSwitchCase="'Signals'">Is signal in switch</div>
    <div *ngSwitchCase="'Standalone'">Is Standalone</div>
    <div *ngSwitchDefault>Default</div>
-  </div>
+  </ng-container>
    
 </section>
 
