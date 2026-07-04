@@ -3,11 +3,42 @@
 
 <p>grid works!</p>
 <section>
-    <ul *ngFor="let item of concepts">
+    <!-- <ul *ngFor="let item of concepts;">
         <li *ngIf="item.trim().toLowerCase() === 'Signals'; else itemDefault">Fix</li>
          <ng-template #itemDefault>
             <li>{{item}}</li>
          </ng-template>
     </ul>
-</section>
+
+  -->
+
+  <ul>
+    <li *ngFor="let item of concepts">
+       <span *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
+        *
+       </span>
+       <ng-template #itemDefault>
+          <span>{{ item }}</span>
+       </ng-template>
+    </li>
+  </ul>
  
+</section>
+
+<p>Angular 17</p>
+<section>
+    <ul>
+    <!-- this is more performant-->
+    <!-- ANGULAR 17 -> 19 -->
+    @for (item of concepts; track $index) {
+      <li>
+        @if(item.trim().toLocaleLowerCase() === 'spider') {
+                *
+
+        } @else {
+                {{item}}
+        }
+      </li>  
+    }  
+ </ul>
+</section>
