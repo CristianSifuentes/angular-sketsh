@@ -1,5 +1,6 @@
 import { CommonModule, NgFor, JsonPipe, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component } from '@angular/core';
+import { Card } from "../card/card";
 
 /* Tier 1 los que usas todo el tiempo */
 /*
@@ -27,7 +28,7 @@ Tengo que volver aqui para poder analizar cada 1 (es posible que algun nombre o 
 
 @Component({
   selector: 'app-grid',
-  imports: [NgFor, JsonPipe, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [NgFor, JsonPipe, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, Card],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
