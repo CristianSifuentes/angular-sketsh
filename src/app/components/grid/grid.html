@@ -14,15 +14,26 @@
 
   <ul>
     <li *ngFor="let item of concepts">
-       <span *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
+       <!-- <span *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
         *
-       </span>
+       </span> -->
+
+       <ng-container *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
+          *  
+       </ng-container>
+       
        <ng-template #itemDefault>
-          <span>{{ item }}</span>
+          {{ item }}  
        </ng-template>
     </li>
   </ul>
- 
+
+  <div [ngSwitch]="concepts[0]">
+   <div *ngSwitchCase="'Signals'">Is signal</div>
+   <div *ngSwitchCase="'Standalone'">Is Standalone</div>
+   <div *ngSwitchDefault>Default</div>
+  </div>
+   
 </section>
 
 <p>Angular 17</p>
