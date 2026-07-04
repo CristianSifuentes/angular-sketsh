@@ -1,9 +1,9 @@
-import { CommonModule, NgFor, JsonPipe, NgIf } from '@angular/common';
+import { CommonModule, NgFor, JsonPipe, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
-  imports: [NgFor, JsonPipe, NgIf],
+  imports: [NgFor, JsonPipe, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
