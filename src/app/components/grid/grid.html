@@ -43,7 +43,7 @@
     <!-- ANGULAR 17 -> 19 -->
     @for (item of concepts; track $index) {
       <li>
-        @if(item.trim().toLocaleLowerCase() === 'spider') {
+        @if(item.trim().toLocaleLowerCase() === 'signals') {
                 *
 
         } @else {
@@ -51,5 +51,12 @@
         }
       </li>  
     }  
+    <p>
+      @switch (concepts[0]) {
+         @case ('Signals') {
+            is signal
+         }
+      }
+    </p>
  </ul>
 </section>
