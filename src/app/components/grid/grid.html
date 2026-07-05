@@ -14,26 +14,22 @@
 
   <ul>
     <li *ngFor="let item of concepts">
-       <!-- <span *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
-        *
-       </span> -->
-
-       <ng-container *ngIf="item.trim().toLowerCase() === 'signals'; else itemDefault">
-          *  
+       <ng-container *ngIf="item.name.trim().toLowerCase() === 'signals'; else itemDefault">
+          *
        </ng-container>
-       
+
        <ng-template #itemDefault>
-          {{ item }}  
+          {{ item.name }}
        </ng-template>
     </li>
   </ul>
 
-  <p [ngSwitch]="concepts[0]">
+  <p [ngSwitch]="concepts[0].name">
    <ng-container *ngSwitchCase="'Signals'">Is signal in switch</ng-container>
    <ng-container *ngSwitchCase="'Standalone'">Is Standalone</ng-container>
    <ng-container *ngSwitchDefault>Default</ng-container>
   </p>
-   
+
 </section>
 
 <p>Angular 17</p>
@@ -43,16 +39,16 @@
     <!-- ANGULAR 17 -> 19 -->
     @for (item of concepts; track $index) {
       <li>
-        @if(item.trim().toLocaleLowerCase() === 'signals') {
+        @if(item.name.trim().toLocaleLowerCase() === 'signals') {
                 *
 
         } @else {
-                {{item}}
+                {{item.name}}
         }
-      </li>  
-    }  
+      </li>
+    }
     <p>
-      @switch (concepts[0]) {
+      @switch (concepts[0].name) {
          @case ('Signals') {
             is signal
          }
@@ -60,3 +56,33 @@
     </p>
  </ul>
 </section>
+
+
+<section class="showcase">
+  <h2 class="showcase__heading">CSS Grid layout</h2>
+  <div class="showcase__grid">
+    @for (item of concepts; track item.id) {
+      <app-card
+        [aliasTitle]="item.name"
+        [index]="$index"
+        [angularVersion]="item.angularversion"
+        [description]="item.description">
+      </app-card>
+    }
+  </div>
+
+  <h2 class="showcase__heading">Flexbox layout</h2>
+  <div class="showcase__flex">
+    @for (item of concepts; track item.id) {
+      <app-card
+        [aliasTitle]="item.name"
+        [index]="$index"
+        [angularVersion]="item.angularversion"
+        [description]="item.description"
+        [variable]="'Input Transform'"
+        >
+      </app-card>
+    }
+  </div>
+</section>
+
