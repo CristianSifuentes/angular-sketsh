@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.scss',
 })
 export class Card {
-  @Input() public title!: string;
+  @Input({alias: 'aliasTitle', required: true}) public title!: string;
   @Input() public index!: number;
   @Input() public angularVersion!: string;
   @Input() public description!: string;

@@ -63,7 +63,7 @@
   <div class="showcase__grid">
     @for (item of concepts; track item.id) {
       <app-card
-        [title]="item.name"
+        [aliasTitle]="item.name"
         [index]="$index"
         [angularVersion]="item.angularversion"
         [description]="item.description">
@@ -75,7 +75,7 @@
   <div class="showcase__flex">
     @for (item of concepts; track item.id) {
       <app-card
-        [title]="item.name"
+        [aliasTitle]="item.name"
         [index]="$index"
         [angularVersion]="item.angularversion"
         [description]="item.description">
