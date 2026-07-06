@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -21,6 +21,7 @@ export class Card {
     console.log(this._variable);
   };
 
+  a = input<boolean>();
   //Input transform
   public get  variable(){
     return this._variable;
