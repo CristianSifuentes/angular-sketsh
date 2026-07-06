@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -16,10 +16,20 @@ export class Card {
   @Input() public angularVersion!: string;
   @Input() public description!: string;
   @Input() public set variable(value:string) {
+    //this._variable = parameter value
     this._variable = value.toUpperCase();
     console.log(this._variable);
   };
+  @Output() public onMessage = new EventEmitter<string>();
 
+  public sendMessage(): void {
+    console.log('something');
+    this.onMessage.emit(`Received message #${this.title}`);
+  }
+  //(click) -> is about zone.js
+
+  // input signals
+  a = input<boolean>();
   //Input transform
   public get  variable(){
     return this._variable;
