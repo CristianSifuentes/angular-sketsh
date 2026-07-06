@@ -16,6 +16,7 @@ export class Card {
   @Input() public angularVersion!: string;
   @Input() public description!: string;
   @Input() public set variable(value:string) {
+    //this._variable = parameter value
     this._variable = value.toUpperCase();
     console.log(this._variable);
   };
