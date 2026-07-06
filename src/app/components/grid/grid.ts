@@ -164,11 +164,17 @@ export class Grid {
     }
   ];
 
-    public person = {
+  public greetig = '';
+
+  public person = {
       name: 'Nico',
       lastName: 'Stan',
       age: 20
-    };
+  };
+
+  public whenMessageReceived(say: string): void {
+     this.greetig = say;
+  }
 
 
 }

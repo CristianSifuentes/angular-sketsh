@@ -71,6 +71,8 @@
     }
   </div>
 
+  <h2>{{greetig}}</h2>
+
   <h2 class="showcase__heading">Flexbox layout</h2>
   <div class="showcase__flex">
     @for (item of concepts; track item.id) {
@@ -79,8 +81,9 @@
         [index]="$index"
         [angularVersion]="item.angularversion"
         [description]="item.description"
-        [variable]="'Input Transform'"
-        >
+        variable="'Input Transform'"
+        (onMessage)="whenMessageReceived($event)"
+        > 
       </app-card>
     }
   </div>
