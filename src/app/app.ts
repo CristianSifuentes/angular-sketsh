@@ -5,7 +5,7 @@ import { Grid } from './components/grid/grid';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Grid],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
