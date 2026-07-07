@@ -1,3 +1,13 @@
-import { Routes } from '@angular/router';
+import { type Routes, RouterModule } from '@angular/router';
+import { Grid } from './components/grid/grid';
 
-export const routes: Routes = [];
+// this section is created automatically
+export const routes: Routes = [
+    {
+        path: '', component: Grid
+    },
+    {
+        path: 'home', component: Grid, 
+
+    }
+];
